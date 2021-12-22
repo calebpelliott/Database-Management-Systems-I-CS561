@@ -1,0 +1,86 @@
+group: UIBK - AIRPORT, FLIGHT, FLIGHT_LEG, LEG_INSTANCE, FARES, AIRPLANE_TYPE, CAN_LAND, AIRPLANE, SEAT_RESERVATION
+
+AIRPORT = {
+airport_code, name, city, state
+'DFW', 'Dallas Fort Worth International Airport', 'Dallas', 'Texas'
+'JFK', 'John F. Kennedy International Airport', 'Queens', 'New York'
+'ORD', 'Chicago OHare International Airport', 'Chicago', 'Illinois'
+'MDW', 'Chicago Midway International Airport', 'Chicago', 'Illinpos'
+'IND', 'Indianapolis International Airport', 'Indianapolis', 'Indiana'
+}
+
+FLIGHT = {
+number, airline, weekdays
+'1', 'Delta', 'M T W'
+'2', 'Delta', 'W TR'
+'3', 'United', 'M T W TR'
+'4', 'American', 'M'
+'5', 'American', 'M'
+}
+
+FLIGHT_LEG = {
+flight_number, leg_number, dptre_airpt_code, schld_dprt_time, arvl_airpt_code, schld_arrival_time
+'1', '1', 'DFW', '0600', IND, 0700
+'3', '2', 'DFW', '0800', ORD, 1100
+'1', '3', 'IND', '0730', DFW, 1030
+'2', '4', 'JFK', '1000', IND, 1200
+'4', '5', 'MDW', '1300', JFK, 1500
+}
+
+LEG_INSTANCE = {
+flight_number, leg_number, date, num_avle_seats, airplane_id, dptre_airpt_code, dptre_time, arvl_airpt_code, arrival_time
+'1', '1', '1/1', 0, '100', 'DFW', 0600, 'IND', 0700
+'1', '3', '1/1', 50, '101', 'IND', 0730, 'DFW', 1030
+'2', '4', '1/1', 2, '102', 'JFK', 1000, 'IND', 1200
+'2', '4', '1/8', 78, '103', 'JFK', 1000, 'IND', 1200
+'4', '5', '1/2', 33, '104', 'MDW', 1300, 'JFK', 1500
+}
+
+FARES = {
+flight_number, fare_code, amount, restrictions
+'1', '11', 100, '1 bag'
+'1', '12', 300, '1 bag'
+'2', '13', 150, '1 bag'
+'4', '14', 20, '1 bag'
+'5', '15', 175, '1 bag, upgrade eligible'
+}
+
+AIRPLANE_TYPE = {
+type_name, max_seats, company
+'Boeing 737 MAX 7', 200, 'Boeing'
+'Boeing 737 MAX 8', 197, 'Boeing'
+'Boeing 737 MAX 9', 210, 'Boeing'
+'Airbus A318', 130, 'Airbus'
+'Airbus A220', 175, 'Airbus'
+}
+
+CAN_LAND = {
+airplane_type_name, airport_code
+'Airbus A220', 'DFW'
+'Airbus A220', 'IND'
+'Boeing 737 MAX 7', 'MDW'
+'Boeing 737 MAX 8', 'JFK'
+'Boeing 737 MAX 9', 'ORD'
+'Airbus A220', 'MDW'
+'Airbus A220', 'JFK'
+'Airbus A220', 'ORD'
+}
+
+AIRPLANE = {
+airplane_id, total_number_of_seats, airplane_type
+'100', 200, 'Boeing 737 MAX 7'
+'101', 175, 'Airbus A220'
+'102', 197, 'Boeing 737 MAX 8'
+'103', 200, 'Boeing 737 MAX 7'
+'104', 210, 'Boeing 737 MAX 9'
+}
+
+SEAT_RESERVATION = {
+flight_number, leg_number, date, seat_number, customer_name, customer_phone
+'1', '1', '1/1', 10, 'Smith', '555-555-5555'
+'2', '1', '1/2', 10, 'Jones', '555-666-6666'
+'1', '3', '1/8', 2, 'Smith', '555-555-5555'
+'3', '2', '1/1', 8, 'Jones', '777-777-7777'
+'4', '4', '1/2', 50, 'Doe', '555-666-6666'
+}
+

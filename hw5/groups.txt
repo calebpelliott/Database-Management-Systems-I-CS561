@@ -1,0 +1,89 @@
+group: UIBK - COMPANY, DIVISION, SITE, PRODUCT, PERSON, WORKS_FOR, SKILL
+description: Tables from and for the lecture [Databases: Foundations, Data Models and System Concepts - University of Innsbruck](http://dbis-informatik.uibk.ac.at/249-0-VO-Datenbanksysteme.html) chapter 3 
+category@de:Universität Innsbruck
+category@en:University of Innsbruck
+
+COMPANY = {
+co_name, govt_id, ceo_ssn, hq_loc
+'New York Tire', '111-22-3333', '999-00-0001', 'New York'
+'New Jersey Tire', '222-33-4444', '999-00-0002', 'Trenton'
+'Southern Axle', '333-44-5555', '999-00-0001', 'Atlanta'
+'Atlanta Axle', '444-55-6666', '999-00-0003', 'Atlanta'
+'Maryland Brake', '555-66-7777', '999-00-0004', 'Columbia'
+'Georgia Brake', '666-77-8888', '999-00-0005', 'Atlanta'
+'Florida Brake', '777-88-9999', '999-00-0006', 'Pensacola'
+'Ohio Windshield', '888-99-0000', '999-00-0007', 'Toledo'
+}
+
+DIVISION = {
+co_id, div_name, subdiv_of, dir_ssn, div_hq
+'666-77-8888', 'innovation', 'null', '888-00-0001 ', 'Valdosta'
+'666-77-8888', 'research', 'innovation', '888-00-0001', 'Boston'
+'666-77-8888', 'development', 'innovation', '888-00-0002', 'Nashville'
+'333-44-5555', 'personnel', 'null', '888-00-0003', 'New York'
+'333-44-5555', 'manufacturing', 'null', '888-00-0005', 'Boston'
+'333-44-5555', 'axle ', 'manufacturing', '888-00-0006', 'Cambridge'
+'333-44-5555', 'frontaxle ', 'axle ', '888-00-0007', 'Mattapan'
+'333-44-5555', 'rearaxle ', 'axle ', '888-00-0008', 'Roxbury'
+'444-55-6666', 'communications', 'null', '888-00-0010', 'WestChester'
+'444-55-6666', 'purchasing', 'null', '888-00-0011', 'Bensalem'
+}
+
+SITE = {
+co_id, div_name, loc
+'333-44-5555', 'front axle', 'Atlanta'
+'333-44-5555', 'front axle', 'Valdosta'
+'333-44-5555', 'front axle', 'Memphis'
+'333-44-5555', 'manufacturing', 'Cleveland'
+'333-44-5555', 'manufacturing', 'Nashville'
+'333-44-5555', 'manufacturing', 'New Orleans'
+'888-99-0000', 'purchasing', 'Toledo'
+'888-99-0000', 'communications', 'Columbus'
+'888-99-0000', 'communications', 'Dayton'
+}
+
+PRODUCT = {
+product_id, manuf_co, manuf_div, loc, prod_descr
+'FA-S/1', '333-44-5555', 'front axle', 'Valdosta', 'small light-weight front axle'
+'FA-S/2', '333-44-5555', 'front axle', 'Valdosta', 'small heavy weight front axle'
+'FA-L/1', '333-44-5555', 'front axle', 'Atlanta', 'large light-weight rust-proof front axle'
+'FA-L/2', '333-44-5555', 'front axle', 'Atlanta', 'large light-weight plain front axle'
+'FA-L/3', '333-44-5555', 'front axle', 'Atlanta', 'large medium-weight rust-proof front axle'
+}
+
+PERSON = {
+ssn, name, address
+'999-00-0001', 'Joseph Jones', '76 Main Street, Atlanta, GA'
+'999-00-0002', 'Daniel Smith', '42 Main Street, Atlanta, GA'
+'999-00-0003', 'Donald Smith', '76 Main Street, Atlanta, GA'
+'999-00-0004', 'Denis Smith', '90 Main Street, Atlanta, GA'
+'777-00-0001', 'Jehosaphat Jones', '32 Main Street, Atlanta, GA'
+'777-00-0002', 'Jennifer Jones', '29 Main Street, Atlanta, GA'
+'777-00-0003', 'Janet Jones', '87 Main Street, Atlanta, GA'
+'777-00-0004', 'Janice Jones', '63 Main Street, Atlanta, GA'
+'777-00-0005', 'Joline Jones', '29 Main Street, Atlanta, GA'
+'777-00-0006', 'Jud Jones', '29 Main Street, Atlanta, GA'
+'777-00-0007', 'Jerusha Jones', '29 Main Street, Atlanta, GA'
+}
+
+WORKS_FOR = {
+ssn, co_id, div_name, salary, emp_id, sup_ssn
+'777-00-001', '333-44-5555', 'front axle', 51000, 'EMP/FA-1', '888-00-0004'
+'777-00-002', '333-44-5555', 'front axle', 52000, 'EMP/FA-2', '888-00-0004'
+'777-00-003', '333-44-5555', 'front axle', 53000, 'EMP/FA-3', '888-00-0004'
+'777-00-004', '333-44-5555', 'front axle', 54000, 'EMP/FA-4', '888-00-0004'
+'777-00-005', '333-44-5555', 'null', 600000, 'EMP/1', 'null'
+'777-00-006', '333-44-5555', 'front axle', 56000, 'EMP/FA-6', '888-00-0004'
+}
+
+SKILL = {
+ssn, prod_id, manuf_co
+'777-00-0005', 'FA-S/1', '333-44-5555'
+'777-00-0005', 'FA-S/2', '333-44-5555'
+'777-00-0005', 'FA-L/1', '333-44-5555'
+'777-00-0005', 'FA-L/2', '333-44-5555'
+'777-00-0006', 'FA-L/1', '333-44-5555'
+'777-00-0006', 'FA-L/2', '333-44-5555'
+'777-00-0006', 'FA-L/3', '333-44-5555'
+}
+
